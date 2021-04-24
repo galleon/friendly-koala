@@ -16,7 +16,7 @@
 ### Datasets and Dataloaders
 ### Summary
 
-## Getting started with Colab
+## Getting started with Colab [GAL]
 ### What is Google Colab
 ### Accessing your datasets
 ### Your first notebook in Colab
@@ -56,13 +56,14 @@
 ### Key models and libraries - HuggingFace transformers 
 ### Training for end-tasks
 ### Summary
-## Using transformers for computer vision
+
+## Using transformers for computer vision [GAL]
 ### Basic concepts 
 ### Key models and libraries
 ### Training for end-tasks
 ### Summary
 
-## Using transformers for time series
+## Using transformers for time series [GAL]
 ### Basic concepts 
 ### Key models and libraries
 ### Training for end-tasks
