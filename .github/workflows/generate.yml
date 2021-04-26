@@ -2,14 +2,14 @@ on: push
 
 jobs:
   convert_via_pandoc:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: |
           brew install pandoc
           brew install pandoc-crossref
           sudo apt-get install texlive-full
-          mkdir build  # create output dir
+          mkdir build
       - run: |
           pandoc \
             --pdf-engine=xelatex \
