@@ -6,14 +6,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          sudo apt-get install texlive-latex-extra
           brew install pandoc
           brew install pandoc-crossref
-          sudo tlmgr update --self
-          sudo tlmgr install adjustbox babel-german background bidi collectbox \
+          brew install texlive
+          tlmgr update --self
+          tlmgr install adjustbox babel-german background bidi collectbox \
             csquotes everypage filehook footmisc footnotebackref framed fvextra \
             letltxmacro ly1 mdframed mweights needspace pagecolor sourcecodepro \
             sourcesanspro titling ucharcat ulem unicode-math upquote xecjk xurl zref
+          tlmgr path add
+          brew unlink texlive && brew link texlive
           mkdir output  # create output dir
           # this will also include README.md
           #echo "::set-env name=FILELIST::$(printf '"%s" ' *.md)"
