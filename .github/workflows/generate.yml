@@ -6,14 +6,28 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          apt-get install haskell-platform
+          cabal v2-update
+          cabal v2-install --install-method=copy pandoc pandoc-crossref pandoc-citeproc
           mkdir output  # create output dir
           # this will also include README.md
           #echo "::set-env name=FILELIST::$(printf '"%s" ' *.md)"
-      - uses: docker://pandoc/latex:2.9
-        with:
-          args: >-
-            -F pandoc-crossref --citeproc
-            --output=output/result.pdf *.md
+      - run: |
+          pandoc \
+            --pdf-engine=xelatex \
+            --template=./templates/eisvogel.latex \
+            --highlight-style tango \
+            --toc -N \
+            --filter pandoc-crossref \
+            --output build/book.pdf \
+            src/metadata.txt src/*.md
+      - run: |
+          pandoc \
+            --filter pandoc-crossref \
+            --css templates/epub.css \
+            --toc -N \
+            --output build/book.epub \
+            src/metadata.txt src/*.md
       - uses: actions/upload-artifact@master
         with:
           name: output
