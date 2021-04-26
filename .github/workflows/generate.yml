@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          apt-get install haskell-platform
+          sudo apt-get install haskell-platform
           cabal v2-update
           cabal v2-install --install-method=copy pandoc pandoc-crossref pandoc-citeproc
           mkdir output  # create output dir
