@@ -6,9 +6,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          apt-get install haskell-platform
-          cabal v2-update
-          cabal v2-install --install-method=copy pandoc pandoc-crossref pandoc-citeproc
+          sudo apt-get install texlive-latex-extra
+          brew install pandoc
+          brew install pandoc-crossref
+          tlmgr install adjustbox babel-german background bidi collectbox \
+            csquotes everypage filehook footmisc footnotebackref framed fvextra \
+            letltxmacro ly1 mdframed mweights needspace pagecolor sourcecodepro \
+            sourcesanspro titling ucharcat ulem unicode-math upquote xecjk xurl zref
           mkdir output  # create output dir
           # this will also include README.md
           #echo "::set-env name=FILELIST::$(printf '"%s" ' *.md)"

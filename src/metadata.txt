@@ -1,10 +1,6 @@
 ---
-title:
-- type: main
-  text: Transformers in Action
-creator:
-- role: authors
-  text: Guillaume ALLEON, Gérard DUPONT
+title: "Transformers in Action"
+author: [Guillaume ALLEON, Gérard DUPONT]
 description: Originally developed for natural language applications in 2017, transformers models have quickly shown their performance in many different tasks. The self-supervised approach proposed (eg masking for language model) allowed to train massive models that were shared by the community. This started a new era in deep learning where pre-trained models, trained on generic dataset, were applied with success in very various problems by organizations without the means to retain models from scratch.
 keywords: [books, programming]
 rights: Commercial
