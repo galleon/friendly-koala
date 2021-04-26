@@ -9,7 +9,7 @@ jobs:
           brew install pandoc
           brew install pandoc-crossref
           sudo apt-get install texlive-full
-          mkdir output  # create output dir
+          mkdir build  # create output dir
       - run: |
           pandoc \
             --pdf-engine=xelatex \
@@ -28,5 +28,5 @@ jobs:
             src/metadata.txt src/*.md
       - uses: actions/upload-artifact@master
         with:
-          name: output
-          path: output
+          name: build
+          path: build
