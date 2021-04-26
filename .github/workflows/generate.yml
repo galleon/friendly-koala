@@ -10,12 +10,10 @@ jobs:
           brew install pandoc-crossref
           sudo apt-get install texlive-full
           mkdir output  # create output dir
-          # this will also include README.md
-          #echo "::set-env name=FILELIST::$(printf '"%s" ' *.md)"
       - run: |
           pandoc \
             --pdf-engine=xelatex \
-            --template=./templates/eisvogel.latex \
+            --template=./templates/eisvogel.tex \
             --highlight-style tango \
             --toc -N \
             --filter pandoc-crossref \
