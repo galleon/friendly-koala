@@ -8,12 +8,12 @@ jobs:
       - run: |
           mkdir output  # create output dir
           # this will also include README.md
-          echo "::set-env name=FILELIST::$(printf '"%s" ' *.md)"
+          #echo "::set-env name=FILELIST::$(printf '"%s" ' *.md)"
       - uses: docker://pandoc/latex:2.9
         with:
           args: >-
             -F pandoc-crossref --citeproc
-            --output=output/result.pdf ${{ env.FILELIST }}
+            --output=output/result.pdf *.md
       - uses: actions/upload-artifact@master
         with:
           name: output
