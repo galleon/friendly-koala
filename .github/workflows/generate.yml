@@ -9,6 +9,7 @@ jobs:
           brew install pandoc
           brew install pandoc-crossref
           sudo apt-get install texlive
+          tlmgr init-usertree
           tlmgr update --self
           tlmgr install adjustbox babel-german background bidi collectbox \
             csquotes everypage filehook footmisc footnotebackref framed fvextra \
