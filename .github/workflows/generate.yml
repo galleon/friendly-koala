@@ -8,15 +8,7 @@ jobs:
       - run: |
           brew install pandoc
           brew install pandoc-crossref
-          sudo apt-get install texlive xzdec
-          tlmgr init-usertree
-          sudo tlmgr update --self
-          sudo tlmgr install adjustbox babel-german background bidi collectbox \
-            csquotes everypage filehook footmisc footnotebackref framed fvextra \
-            letltxmacro ly1 mdframed mweights needspace pagecolor sourcecodepro \
-            sourcesanspro titling ucharcat ulem unicode-math upquote xecjk xurl zref
-          tlmgr path add
-          brew unlink texlive && brew link texlive
+          sudo apt-get install texlive-full
           mkdir output  # create output dir
           # this will also include README.md
           #echo "::set-env name=FILELIST::$(printf '"%s" ' *.md)"
