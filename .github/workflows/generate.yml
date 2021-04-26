@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          brew install pandoc
+          brew install pandoc@2.12
           brew install pandoc-crossref
           sudo apt-get install texlive-full
           mkdir build
