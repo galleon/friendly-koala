@@ -12,16 +12,10 @@ jobs:
           tlmgr init-usertree
           sudo tlmgr update --all
           mkdir build
-      - run: |
-          pandoc \
-            --pdf-engine=xelatex \
-            --template=./templates/eisvogel.tex \
-            --highlight-style tango \
-            --toc \
-            --number-sections \
-            --filter pandoc-crossref \
-            --output build/book.pdf \
-            src/metadata.txt src/*.md
+      - name: Build pdf
+        uses: docker://pandoc/ubuntu-latex
+        with:
+          entrypoint: build-pdf.sh
       - run: |
           pandoc \
             --filter pandoc-crossref \

@@ -6,8 +6,8 @@ date: "2021"
 keywords: [books, programming]
 rights: Commercial
 language: en-US
-stylesheet: epub.css
 cover-image: img/cover.jpg
+stylesheet: templates/epub.css
 lof: true
 lof-own-page: true
 toc-own-page: true
