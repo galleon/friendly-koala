@@ -6,24 +6,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          brew install pandoc
-          brew install pandoc-crossref
-          sudo apt-get install texlive-xetex xzdec
-          tlmgr init-usertree
-          sudo tlmgr update --all
           mkdir build
       - name: Build pdf
         uses: docker://pandoc/ubuntu-latex
         with:
           entrypoint: build-pdf.sh
-      - run: |
-          pandoc \
-            --filter pandoc-crossref \
-            --css templates/epub.css \
-            --toc \
-            --number-sections \
-            --output build/book.epub \
-            src/metadata.txt src/*.md
       - uses: actions/upload-artifact@master
         with:
           name: build
