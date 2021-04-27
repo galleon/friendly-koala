@@ -8,8 +8,9 @@ jobs:
       - run: |
           brew install pandoc
           brew install pandoc-crossref
-          sudo apt-get install texlive-xetex
-          sudo tlmgr update --self
+          sudo apt-get install texlive-xetex xzdec
+          tlmgr init-usertree
+          sudo tlmgr update --all
           mkdir build
       - run: |
           pandoc \
