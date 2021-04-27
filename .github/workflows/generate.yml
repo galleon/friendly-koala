@@ -8,14 +8,15 @@ jobs:
       - run: |
           brew install pandoc
           brew install pandoc-crossref
-          sudo apt-get install texlive-full
+          sudo apt-get install texlive-xetex
           mkdir build
       - run: |
           pandoc \
             --pdf-engine=xelatex \
             --template=./templates/eisvogel.tex \
             --highlight-style tango \
-            --toc -N \
+            --toc \
+            --number-sections \
             --filter pandoc-crossref \
             --output build/book.pdf \
             src/metadata.txt src/*.md
@@ -23,7 +24,8 @@ jobs:
           pandoc \
             --filter pandoc-crossref \
             --css templates/epub.css \
-            --toc -N \
+            --toc \
+            --number-sections \
             --output build/book.epub \
             src/metadata.txt src/*.md
       - uses: actions/upload-artifact@master

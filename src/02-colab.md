@@ -35,7 +35,7 @@ In Colab, the default hardware in a CPU. Nevertheless you can activate `GPU`or `
 
 For enabling this go to: 
 
-![Some image](/img/settings.png){#fig:someimage}
+![Some image](img/settings.png){#fig:someimage}
 
 ## Managing your notebooks
 
