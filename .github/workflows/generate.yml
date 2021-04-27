@@ -10,7 +10,7 @@ jobs:
       - name: Build pdf
         uses: docker://pandoc/ubuntu-latex
         with:
-          entrypoint: build-pdf.sh
+          entrypoint: /github/workspace/build-pdf.sh
       - uses: actions/upload-artifact@master
         with:
           name: build
