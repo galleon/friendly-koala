@@ -9,6 +9,7 @@ jobs:
           brew install pandoc
           brew install pandoc-crossref
           sudo apt-get install texlive-xetex
+          sudo tlmgr update --self
           mkdir build
       - run: |
           pandoc \
