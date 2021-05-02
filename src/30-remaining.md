@@ -1,30 +1,3 @@
-## Examples of real-world applications
-### HuggingFace transformers
-### Other models usages (TBC)
-
-# Part 2 from recurrent networks to transformers
-
-## Recurrent Neural networks [GD]
-### Principles
-### LSTM & GRU cells
-### Architectures
-### RNN Unfolding & bidirectional RNN
-### Constraints and limitations
-### Summary
-
-## Attention networks [GD]
-### Principles
-### Training
-### Summary
-
-## Transformer 
-### Encoder/decoder architecture
-### Self-supervised training
-### Multi-head attention
-### Fine-tuning approach
-### Multi-task learning
-### Synthesis
-
 # Part 3 Transformers in Action
 
 ## Using transformers for NLP [GD]
@@ -37,6 +10,9 @@
 ### Basic concepts 
 ### Key models and libraries
 ### Training for end-tasks
+### References
+
+- [Emerging Properties in Self-Supervised Vision Transformers](https://arxiv.org/abs/2104.14294)
 ### Summary
 
 ## Using transformers for time series [GAL]
